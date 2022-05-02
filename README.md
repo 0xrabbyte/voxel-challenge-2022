@@ -1,10 +1,9 @@
 # <a name="title">Taichi Voxel Challenge</a>
+## A Tiny Jinja
 
 <p align="center">
 <img src="demo.jpg" width="75%"></img>
 </p>
-
-> Figure: result of `python3 example6.py`. Please replace the image above (`demo.jpg`) with yours, so that other people can immediately see your results :-)
 
 We invite you to create your voxel artwork, by putting your [Taichi](https://github.com/taichi-dev/taichi) code in `main.py`!
 
