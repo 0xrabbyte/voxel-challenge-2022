@@ -2,7 +2,7 @@ from scene import Scene
 import taichi as ti
 from taichi.math import *
 
-scene = Scene(voxel_edges=0, exposure=1.0);scene.set_floor(-0.05, (0.957, 0.586, 0.664))
+scene = Scene(voxel_edges=0, exposure=1.2);scene.set_floor(-0.05, (0.957, 0.586, 0.664))
 scene.set_background_color((0.942, 0.578, 0.512));scene.set_directional_light((1, 1, 1), 0.2, (1, 0.8, 0.6))
 
 @ti.func
@@ -13,7 +13,7 @@ def set_blocks(st, ed, kd, color):
 @ti.func
 def set_lamp(x,y,z):
     col_pil3,col_s,col_l=vec3(0.211,0.211,0.211),vec3(0.793,0.105,0.270),vec3(0.980,0.883,0.316)
-    set_blocks(vec3(x,y-8,z),vec3(x+1,y,z+1),1,col_pil3);set_blocks(vec3(x-1,y-9,z-1),vec3(x+2,y-8,z+2),1,col_s)
+    set_blocks(vec3(x,y-7,z),vec3(x+1,y,z+1),1,col_pil3);set_blocks(vec3(x-1,y-8,z-1),vec3(x+2,y-7,z+2),1,col_s)
     set_blocks(vec3(x-2,y-9,z-1),vec3(x+3,y-8,z+2),2,col_l);set_blocks(vec3(x-1,y-9,z-2),vec3(x+2,y-8,z+3),2,col_l)
     set_blocks(vec3(x-3,y-14,z-1),vec3(x+4,y-9,z+2),1,col_s);set_blocks(vec3(x-1,y-14,z-3),vec3(x+2,y-9,z+4),1,col_s)
     set_blocks(vec3(x-2,y-14,z-2),vec3(x+3,y-9,z+3),1,col_s);set_blocks(vec3(x-3,y-11,z-1),vec3(x+4,y-10,z+2),2,col_l)
@@ -82,10 +82,10 @@ def initialize_voxels():
     set_blocks(vec3(-2,54,-1),vec3(2,56,1),1,col_top);set_blocks(vec3(-1,54,-2),vec3(1,56,2),1,col_top)
     set_lamp(31,41,31);set_lamp(-31,41,31);set_lamp(31,41,-31);set_lamp(-31,41,-31)
     col_torii,col_black=vec3(0.938,0.254,0.332),vec3(0.043,0.063,0.074)
-    set_blocks(vec3(-20,-4,60),vec3(-18,50,62),1,col_torii);set_blocks(vec3(18,-4,60),vec3(20,50,62),1,col_torii)
-    set_blocks(vec3(-22,43,60),vec3(22,45,62),1,col_torii);set_blocks(vec3(-26,50,60),vec3(26,52,62),1,col_torii)
-    set_blocks(vec3(-28,52,60),vec3(28,53,62),1,col_black);set_blocks(vec3(-30,53,60),vec3(30,54,62),1,col_black)
-    set_blocks(vec3(-2,45,60),vec3(2,50,62),1,col_torii)
+    set_blocks(vec3(-20,-4,60),vec3(-18,45,62),1,col_torii);set_blocks(vec3(18,-4,60),vec3(20,45,62),1,col_torii)
+    set_blocks(vec3(-25,38,60),vec3(25,40,62),1,col_torii);set_blocks(vec3(-30,45,60),vec3(30,47,62),1,col_torii)
+    set_blocks(vec3(-32,47,60),vec3(32,48,62),1,col_black);set_blocks(vec3(-34,48,60),vec3(34,49,62),1,col_black)
+    set_blocks(vec3(-2,40,60),vec3(2,45,62),1,col_torii)
 
 initialize_voxels()
 
