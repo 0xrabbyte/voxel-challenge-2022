@@ -2,7 +2,7 @@ from scene import Scene
 import taichi as ti
 from taichi.math import *
 
-scene = Scene(voxel_edges=0, exposure=1.2);scene.set_floor(-0.05, (0.957, 0.586, 0.664))
+scene = Scene(voxel_edges=0, exposure=2.0);scene.set_floor(-0.05, (0.957, 0.586, 0.664))
 scene.set_background_color((0.942, 0.578, 0.512));scene.set_directional_light((1, 1, 1), 0.2, (1, 0.8, 0.6))
 
 @ti.func
